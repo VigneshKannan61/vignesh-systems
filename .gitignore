@@ -1,1 +1,16 @@
+# Dependencies and Environment
 .agents/
+.mwgrc
+skills-lock.json
+
+# OS and Editor junk
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*.log
+.vscode/
+.idea/
+
+# Unused / duplicate assets
+assets/images/*copy*

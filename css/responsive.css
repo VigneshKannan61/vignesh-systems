@@ -1,0 +1,266 @@
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES (Mobile-First / Breakpoint Adaptations)
+   Breakpoints:
+   - 1024px: Desktop / Laptop boundary
+   - 768px:  Tablet boundary
+   - 640px:  Mobile boundary
+   - 375px:  Compact mobile boundary
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   LAPTOP / DESKTOP (Max width 1024px)
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 1024px) {
+  :root {
+    --section-spacing-y: 4rem; /* 64px on laptop */
+  }
+
+  .hero-section {
+    padding-top: 3.5rem;
+    padding-bottom: var(--section-spacing-y);
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .hero-content {
+    max-width: 680px;
+  }
+
+  .hero-graphic-wrap {
+    max-width: 580px;
+  }
+
+  /* 4 cards into 2x2 grid */
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  /* 4 workflow steps into 2x2 grid */
+  .workflow-steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .about-card {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 2.5rem;
+  }
+
+  .about-portrait-wrapper {
+    order: -1;
+    justify-content: flex-start;
+  }
+
+  .portrait-card {
+    flex-direction: row;
+    gap: 1.5rem;
+    max-width: 100%;
+    text-align: left;
+    padding: 1.25rem;
+    align-items: center;
+  }
+
+  .portrait-image-container {
+    width: 140px;
+    height: 160px;
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   TABLET (Max width 768px)
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 768px) {
+  :root {
+    --section-spacing-y: 3.25rem; /* 52px on tablet */
+  }
+
+  .hero-section {
+    padding-top: 3rem;
+    padding-bottom: var(--section-spacing-y);
+  }
+
+  .about-container,
+  .faq-container {
+    margin-bottom: 3rem;
+  }
+
+  /* Navigation adjustments */
+  .site-nav,
+  .header-action {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile-nav-drawer {
+    display: block;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    padding: 1.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform var(--transition-normal), opacity var(--transition-normal), visibility var(--transition-normal);
+  }
+
+  .mobile-nav-drawer.is-active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .mobile-nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .mobile-nav-link {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    display: block;
+    padding: 0.25rem 0;
+  }
+
+  /* Problem & Solution comparison layout stacks */
+  .problem-solution-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .problem-box, .solution-box {
+    padding: 1.75rem;
+  }
+
+  /* Services cards stack cleanly */
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* Workflow steps stack vertically */
+  .workflow-steps-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* Footer layout */
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .footer-left {
+    text-align: center;
+  }
+
+  .footer-right {
+    justify-content: center;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   MOBILE (Max width 640px)
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 640px) {
+  :root {
+    --section-spacing-y: 2.5rem; /* 40px on mobile */
+  }
+
+  .hero-section {
+    padding-top: 2.75rem;
+    padding-bottom: var(--section-spacing-y);
+  }
+
+  .section-header {
+    margin-bottom: 2rem;
+  }
+
+  .workflow-media-container {
+    margin-top: 1.75rem;
+  }
+
+  .container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .hero-headline {
+    font-size: 2rem;
+  }
+
+  .hero-lead {
+    font-size: 1rem;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+  }
+
+  .hero-focus-card {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .about-card {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .final-cta-card {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .final-cta-action .btn {
+    width: 100%;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   COMPACT MOBILE (Max width 375px)
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 375px) {
+  .hero-headline {
+    font-size: 1.75rem;
+  }
+
+  .box-title {
+    font-size: 1.2rem;
+  }
+
+  .portrait-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .portrait-image-container {
+    width: 100%;
+    max-width: 200px;
+    height: 220px;
+    margin-bottom: 1rem;
+  }
+}
